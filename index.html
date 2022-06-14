@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>plinko</title>
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/matter.js"></script>
+	<script src="boundary.js"></script>
+	<script src="sketch.js"></script>
+	<script src="particle.js"></script>
+	<script src="peg.js"></script>
+	
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		canvas {
+			margin: auto;
+		}
+
+		.commands {
+			float: right;
+		}
+
+		
+	</style>
+</head>
+
+<body>
+	<input type="range" style="float: right" value="15" min="1" max="30" oninput="changeParticleSize(this.value)">
+	<output class="commands" id="particleSize">Particle Size: 15</output>
+
+	<input type="range" style="float: right; clear: right" value="50" min="1" max="100" oninput="changeSpawnRate(this.value)">
+	<output class="commands" id="spawnRate">Spawn Rate: 50</output>
+
+	<input type="range" style="float: right; clear: right" value="1" min="0.1" max="2" step="0.1" oninput="changePegSize(this.value)">
+	<output class="commands" id="pegSize">Peg Size: 100%</output>
+
+	<input type="range" style="float: right; clear: right" value="5" min="0" max="8" step="1" oninput="changeRowsSize(this.value)">
+	<output class="commands" id="rowsCount">Rows: 5</output>
+
+	<input type="range" style="float: right; clear: right" value="3" min="1" max="9" step="2" oninput="changeColsSize(this.value)">
+	<output class="commands" id="colsCount">Columns: 3</output>
+
+	<input type="range" style="float: right; clear: right" value="5" min="0" max="300" oninput="changeSpawnVariance(this.value)">
+	<output class="commands" id="spawnVarianceNum">Spawn Variance: 5</output>
+
+	<input type="range" style="float: right; clear: right" value="3" min="0" max="30" oninput="changeBoundaryNum(this.value)">
+	<output class="commands" id="boundaryNum">Collectors: 3</output>
+
+	<input type="range" style="float: right; clear: right" value="200" min="0" max="500" oninput="changeBoundaryHeight(this.value)">
+	<output class="commands" id="boundaryHeight">Collector Height: 200</output>
+
+	<button type="button" class="commands" style="clear:right" onclick="clearParticles()">Clear Particles</button>
+	<button type="button" class="commands" onclick="pauseLoop()">Pause</button>
+	<button type="button" class="commands" onclick="continueLoop()">Continue</button>
+</body>
+
+</html>
